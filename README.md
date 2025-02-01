@@ -13,7 +13,9 @@ npm install
 npm run test
 ```
 
-You should see the tests pass. if you read each test file comments you should see how it proves the issue.
+You should see the tests fail on a few expectations around global state and the state of the http.request proxy:
+<img width="424" alt="image" src="https://github.com/user-attachments/assets/05b1e894-46c6-4471-ada3-3d51e97c9295" />
+
 
 Ideally maybe jest should reset the native-module cache between each test to remove any state that is attached (i.e. the interceptor proxy added my msw). Not sure how feasible it will be though. Jest's own `jest.resetModules();` method doesn't reset native modules.
 
